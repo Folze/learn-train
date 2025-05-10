@@ -32,7 +32,6 @@ checkEvenNumber(2);
 checkEvenNumber(3);
 
 
-
 function calculator($num1, $num2, $operation)
 {
     switch ($operation) {
@@ -43,6 +42,9 @@ function calculator($num1, $num2, $operation)
         case "*":
             return  $num1 * $num2;
         case '/':
+            if ($num1 == 0 && $num2 == 0) {
+                return 'Ошибка:Деление на ноль!';
+            }
             return  $num1 / $num2;
         default:
             return 'Неизвестная операция\n';
@@ -52,3 +54,16 @@ function calculator($num1, $num2, $operation)
 echo calculator(10, 5, '+');
 echo calculator(10, 5, '*');
 echo calculator(10, 5, 'asdasdasd');
+
+
+
+
+function checkName($name): string
+{
+    if (strlen($name) > 5) {
+        return 'Длинное имя';
+    } else {
+        return 'Короткое имя';
+    }
+}
+checkName('Maksim');
