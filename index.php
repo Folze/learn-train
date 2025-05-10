@@ -31,7 +31,9 @@ function checkEvenNumber($num)
 checkEvenNumber(2);
 checkEvenNumber(3);
 
-
+$num1 = $argv[1];
+$num2 = $argv[2];
+$operation = $argv[3];
 function calculator($num1, $num2, $operation)
 {
     switch ($operation) {
@@ -47,15 +49,10 @@ function calculator($num1, $num2, $operation)
             }
             return  $num1 / $num2;
         default:
-            return 'Неизвестная операция\n';
+            return "Неизвестная операция \n";
     }
 }
-
-echo calculator(10, 5, '+');
-echo calculator(10, 5, '*');
-echo calculator(10, 5, 'asdasdasd');
-
-
+echo calculator($num1, $num2, $operation);
 
 
 function checkName($name): string
