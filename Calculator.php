@@ -7,9 +7,6 @@ class Calculator
 
     public function __construct(int $num1, int $num2)
     {
-        if ($num1 && $num2 != int) {
-            throw new Exception('Передавать можно только числа');
-        }
         $this->num1 = $num1;
         $this->num2 = $num2;
     }
