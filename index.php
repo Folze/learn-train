@@ -9,46 +9,21 @@ function findFactorial($number)
     return $result;
 }
 
-echo findFactorial(8);
+echo findFactorial(3) . PHP_EOL;
 
 
 
 $array = ["one","two","three","four"];
 foreach ($array as $arr) {
-    echo $arr . '\n';
+    echo $arr . PHP_EOL;
 }
 
-function checkEvenNumber($num)
+function checkName($name): string
 {
-    if ($num % 2 === 0) {
-        echo "Число четное";
+    if (strlen($name) > 5) {
+        return 'Длинное имя';
     } else {
-        echo "Нечетное";
+        return 'Короткое имя';
     }
 }
-
-
-checkEvenNumber(2);
-checkEvenNumber(3);
-
-
-
-function calculator($num1, $num2, $operation)
-{
-    switch ($operation) {
-        case "+":
-            return  $num1 + $num2;
-        case "-":
-            return  $num1 - $num2;
-        case "*":
-            return  $num1 * $num2;
-        case '/':
-            return  $num1 / $num2;
-        default:
-            return 'Неизвестная операция\n';
-    }
-}
-
-echo calculator(10, 5, '+');
-echo calculator(10, 5, '*');
-echo calculator(10, 5, 'asdasdasd');
+checkName('Maksim');
