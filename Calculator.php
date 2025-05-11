@@ -7,6 +7,9 @@ class Calculator
 
     public function __construct(int $num1, int $num2)
     {
+        if (!is_numeric($num1) || !is_numeric($num2)) {
+            throw new Exception('Только числа!');
+        }
         $this->num1 = $num1;
         $this->num2 = $num2;
     }
