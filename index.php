@@ -9,51 +9,14 @@ function findFactorial($number)
     return $result;
 }
 
-echo findFactorial(8);
+echo findFactorial(3) . PHP_EOL;
 
 
 
 $array = ["one","two","three","four"];
 foreach ($array as $arr) {
-    echo $arr . '\n';
+    echo $arr . PHP_EOL;
 }
-
-function checkEvenNumber($num)
-{
-    if ($num % 2 === 0) {
-        echo "Число четное";
-    } else {
-        echo "Нечетное";
-    }
-}
-
-
-checkEvenNumber(2);
-checkEvenNumber(3);
-
-$num1 = $argv[1];
-$num2 = $argv[2];
-$operation = $argv[3];
-function calculator($num1, $num2, $operation)
-{
-    switch ($operation) {
-        case "+":
-            return  $num1 + $num2;
-        case "-":
-            return  $num1 - $num2;
-        case "*":
-            return  $num1 * $num2;
-        case '/':
-            if ($num1 == 0 && $num2 == 0) {
-                return 'Ошибка:Деление на ноль!';
-            }
-            return  $num1 / $num2;
-        default:
-            return "Неизвестная операция \n";
-    }
-}
-echo calculator($num1, $num2, $operation);
-
 
 function checkName($name): string
 {
@@ -64,3 +27,48 @@ function checkName($name): string
     }
 }
 checkName('Maksim');
+
+class Calculator
+{
+    private $num1;
+    private $num2;
+
+    public function __construct(int $num1, int $num2)
+    {
+        $this->num1 = $num1;
+        $this->num2 = $num2;
+    }
+
+    public function add()
+    {
+        return $this->num1 + $this->num2;
+    }
+
+    public function subtract()
+    {
+        return $this->num1 - $this->num2;
+    }
+
+    public function multiply()
+    {
+        return $this->num1 * $this->num2;
+    }
+
+    public function divide()
+    {
+        return ($this->num2 == 0) ? 'Делить на ноль нельзя' : $this->num1 / $this->num2;
+    }
+
+    public function checkEven()
+    {
+        return ($this->num1 % 2 == 0 && $this->num2 % 2 == 0) ? 'Четное число ' : 'Нечетное';
+    }
+}
+$calc = new Calculator(10, 5);
+
+// Вызываем методы
+echo $calc->add() . PHP_EOL;
+echo $calc->subtract() . PHP_EOL;
+echo $calc->multiply() . PHP_EOL;
+echo $calc->divide() . PHP_EOL;
+echo $calc->checkEven() . PHP_EOL;
