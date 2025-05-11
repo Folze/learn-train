@@ -5,7 +5,7 @@ class Calculator
     private $num1;
     private $num2;
 
-    public function __construct(int $num1, int $num2)
+    public function __construct(int|float $num1, int|float $num2)
     {
         if (!is_numeric($num1) || !is_numeric($num2)) {
             throw new Exception('Только числа!');
