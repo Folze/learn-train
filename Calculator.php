@@ -1,5 +1,16 @@
 <?php
 
+
+interface CalculatorInterface
+{
+    public function add(): float;
+    public function subtract(): float;
+    public function multiply(): float;
+    public function divide(): float;
+    public function getResult(): float;
+    public function checkEven(): string;
+}
+
 class Calculator
 {
     private $num1;
