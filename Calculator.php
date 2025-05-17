@@ -70,7 +70,35 @@ $calc = new Calculator(10, 5);
 
 // Вызываем методы
 echo $calc->add() . PHP_EOL;
+echo $calc->getResult() . PHP_EOL;
 echo $calc->subtract() . PHP_EOL;
+echo $calc->getResult() . PHP_EOL;
 echo $calc->multiply() . PHP_EOL;
+echo $calc->getResult() . PHP_EOL;
 echo $calc->divide() . PHP_EOL;
+echo $calc->getResult() . PHP_EOL;
 echo $calc->checkEven() . PHP_EOL;
+echo $calc->getResult() . PHP_EOL;
+
+if ($calc instanceof CalculatorInterface) {
+    echo "Класс соответствует интерфейсу!";
+}
+
+class ScientificCalculator extends Calculator implements CalculatorInterface
+{
+    public function power(): float
+    {
+        return $this->num1 ** $this->num2;
+    }
+
+    public function sqrt(): float
+    {
+        return sqrt($this->num1);
+    }
+}
+
+$sciCalc = new ScientificCalculator(4, 3);
+
+echo $sciCalc->power() . PHP_EOL;
+echo $sciCalc->sqrt() . PHP_EOL;
+echo $sciCalc->add() . PHP_EOL;
